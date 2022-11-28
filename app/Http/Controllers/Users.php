@@ -59,9 +59,10 @@ class Users extends Controller
 
       }
       public function vistavale(Request $request,$sup,$id_obra,$condicional_existe = 0,$alerts = 0){
-        $usersemp = DB::select('select * FROM users WHERE users.rol = 2 and users.id NOT IN (SELECT user_herramientas.user FROM user_herramientas WHERE user_herramientas.obra =?  )',[$id_obra]);
+        $usersemp = DB::select('select * FROM users WHERE users.rol = 2  and users.id NOT IN (SELECT user_herramientas.user FROM user_herramientas WHERE user_herramientas.obra =?  )',[$id_obra]);
         $obra = DB::select('select obra from obras where obras.id = ?', [$id_obra]); 
         $supervisor = DB::select('select users.id from users where users.name = ?', [$sup]);
+       
         foreach ($obra as $key => $value) {
           $obra = $value->obra;
          }
@@ -105,8 +106,7 @@ class Users extends Controller
       }
 
       
-         $emp = DB::select('select users.id,users.name FROM users INNER JOIN user_herramientas on users.id = user_herramientas.user WHERE users.rol = 2 and user_herramientas.obra
-         = ? group by users.name' , [$id_obra]);
+         $emp = DB::select('select users.id,users.name,users.rol FROM users INNER JOIN user_herramientas on users.id = user_herramientas.user WHERE users.rol = 2 and user_herramientas.obra = ? or users.rol = 1 and user_herramientas.obra = ? group by users.name ORDER by users.rol;' , [$id_obra,$id_obra]);
          
          
 

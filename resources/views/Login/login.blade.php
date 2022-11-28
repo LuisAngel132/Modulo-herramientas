@@ -9,8 +9,7 @@
 </head>
 <style>
  body {
-  background: #007bff;
-  background: linear-gradient(to right, #d0e1f7, #64b5f6);
+  background: white;
 }
 #backG {
   position: relative;
@@ -215,16 +214,19 @@ txtBox {
   
 }  
 
-.btn-1 {
-  background: #fdcae1;
-  background: linear-gradient(0deg, #fdcae1 0%,#fdcae1 100%);
+..btn-1 {
+  background: #ff4081;
+  background: linear-gradient(0deg, #ff4081 0%,#ff4081 100%);
   border: none;
 }
 .btn-1:hover {
-   background: #f297c0;
-background: linear-gradient(0deg,#f297c0 0%, #f297c0 100%);
+   background: #f82685;
+background: linear-gradient(0deg,#ff4081 0%, #e7227b 100%);
 }
+    
 .btn-login {
+  background: #f82685;
+
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
   padding: 0.75rem 1rem;
@@ -244,7 +246,7 @@ background: linear-gradient(0deg,#f297c0 0%, #f297c0 100%);
 <body>
   
 
-  <
+  
   <div class="container">
       
    

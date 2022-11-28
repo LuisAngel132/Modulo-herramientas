@@ -14,6 +14,22 @@
 </head>
 <body>
   <style>
+      div.dt-button-collection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px !important;
+    margin-top: 1px;
+    padding: 8px 5px 4px 8px;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.4);
+    background-color: white;
+    overflow: hidden;
+    z-index: 2002;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgb(0 0 0 / 30%);
+    box-sizing: border-box;
+}
     .autocomplete {
   position: relative;
   display: inline-block;
@@ -68,8 +84,7 @@
     }
     
     body {
-      background: #ece9e9;
-      background: linear-gradient(to right, #c1daf9,#c8ddf8);
+      background: white;
     }
     
     
@@ -98,13 +113,13 @@
 
 /* 1 */
 .btn-1 {
-  background: #fdcae1;
-  background: linear-gradient(0deg, #fdcae1 0%,#fdcae1 100%);
+  background: #ff4081;
+  background: linear-gradient(0deg, #ff4081 0%,#ff4081 100%);
   border: none;
 }
 .btn-1:hover {
-   background: #f297c0;
-background: linear-gradient(0deg,#f297c0 0%, #f297c0 100%);
+   background: #f82685;
+background: linear-gradient(0deg,#ff4081 0%, #e7227b 100%);
 }
 .file-input__input {
   width: 0.1px;
@@ -143,11 +158,11 @@ background: linear-gradient(0deg,#f297c0 0%, #f297c0 100%);
 }  
  
 /* Estilos para el HEAD de la tabla */
-table.dataTable thead {background-color:#fdcae1;color: azure;}
+table.dataTable thead {background-color:#ff4081;color: azure;}
 
 /* Estilos para los botones de paginacion */
 .page-item.active .page-link {
-  background-color:#fdcae1 !important;
+  background-color:#ff4081 !important;
     color: azure !important;
     /* border: 1px solid black; */
 }
@@ -171,7 +186,7 @@ table.dataTable thead {background-color:#fdcae1;color: azure;}
           </button>
         <div class="row">
             <div class="col">
-                <table id="myTable" class="table table-striped" style="width:100%">
+                <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <tr>
                             <th>herramienta</th>
@@ -187,15 +202,20 @@ table.dataTable thead {background-color:#fdcae1;color: azure;}
                     <td>{{$item->nombre}}</td>
                     <td> {{$item->unidad}}</td>
                     <td> {{$item->numero_serie}}</td>
-                    <td>  <a  href="#demo-modal2" data-id="{{$item->numero_serie}}" onclick="followUser(this); return true;">
+                    <td>  
                      
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
-                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
-                          </svg>  
-                        </button>
-                      </a></td>
+                          <a  href="#demo-modal2" data-id="{{$item->numero_serie}}" onclick="followUser(this); return true;">
+                     
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+                              </svg>  
+                            </button>
+                          </a>
+                       
+                     
+                   </td>
                 </tr>
     @endforeach
             </tbody>              
@@ -332,6 +352,19 @@ table.dataTable thead {background-color:#fdcae1;color: azure;}
  <script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
  <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
+ <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
+ <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+ <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.53/build/pdfmake.min.js"></script>
+ <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.53/build/vfs_fonts.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
+ <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>  
+<script src="cdn.datatables.net/colvis/1.1.1/js/dataTables.colVis.min.js"></script>
+<script src="cdn.datatables.net/colvis/1.1.1/js/dataTables.colVis.js"></script>
+<script src="https://cdn.datatables.net/fixedcolumns/4.2.1/js/dataTables.fixedColumns.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.3.2/js/buttons.colVis.min.js"></script>
 
 
 <!-- Para los estilos en Excel     -->
@@ -339,38 +372,60 @@ table.dataTable thead {background-color:#fdcae1;color: azure;}
 <script src="https://cdn.jsdelivr.net/npm/datatables-buttons-excel-styles@1.1.1/js/buttons.html5.styles.templates.min.js"></script>
 <script>
 $(document).ready(function () {
-    $("#myTable").DataTable({
-      pageLength: 4,
-      responsive: true,
-      language: {
+    // Setup - add a text input to each footer cell
+   
+        
+    var table = $('#example').DataTable({
+
+        orderCellsTop: true,
+        fixedHeader: true,
+        language: {
             "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
         },
-        scrollY:        "400px",
-        scrollX:        true,
-        scrollCollapse: true,
-        paging:         true,
-        columnDefs: [
-            { width: 200, targets: 0 }
-        ],
-      dom: '<"row" B> <"row"<"col-md-6 "l> <"col-md-6"f> > rt <"row"<"col-md-6 "i> <"col-md-6"p> >',           buttons:{
+        pageLength: 4,
+     
+     scrollY:        "320px",
+     scrollX:        true,
+     scrollCollapse: true,
+     paging:         true,
+     dom: '<"row" B> <"row"<"col-md-6 "l> <"col-md-6"f> > rt <"row"<"col-md-6 "i> <"col-md-6"p> >',
+     buttons:{
             dom: {
                 button: {
                     className: 'custom-btn btn-1'
-                },
-                button: {
-                    className: 'custom-btn btn-1'
-                },
-                
+                }
             },
-            
-         
-          
             buttons: [
+              {
+                //definimos estilos del boton de excel
+                extend: "copy",
+                text:'COPIAR',
+                className:'custom-btn btn-1',
+           
+            },   
+             'pdf',
+
+              {
+                //definimos estilos del boton de excel
+                extend: "print",
+                text:'IMPRIMIR',
+                className:'custom-btn btn-1',
+           
+            },   
+              {
+                //definimos estilos del boton de excel
+                extend: "colvis",
+                text:'COLUMNAS',
+                className:'custom-btn btn-1',
+           
+            },
+           
             
+              
             {
                 //definimos estilos del boton de excel
                 extend: "excel",
-                text:'Exportar a Excel',
+                text:'EXCEL',
                 className:'custom-btn btn-1',
 
                 // 1 - ejemplo básico - uso de templates pre-definidos
@@ -389,125 +444,13 @@ $(document).ready(function () {
                 },
                 
 
-                // 2 - estilos a una fila   
-                /* 
-                excelStyles: {                      // Add an excelStyles definition
-                    cells: "2",                     // adonde se aplicaran los estilos (fila 2)
-                    style: {                        // The style block
-                        font: {                     // Style the font
-                            name: "Arial",          // Font name
-                            size: "14",             // Font size
-                            color: "FFFFFF",        // Font Color
-                            b: true,               // negrita SI
-                        },
-                        fill: {                     // Estilo de relleno (background)
-                            pattern: {              // tipo de rellero (pattern or gradient)
-                                color: "ff7961",    // color de fondo de la fila
-                            }
-                        }
-                    }
-                },
-                */
-
-                // 3 - uso de condiciones
-                /*
-                 excelStyles: {
-                    cells: 'sD', //(s) de Smart - Referencia de celda inteligente, todas las filas de datos en la columna D (en este caso Edad)
-                    condition: {                    // Add the style conditionally
-                        type: 'cellIs',             // Using the cellIs type
-                        operator: 'between',        // Operator a usar "Entre"
-                        formula: [35,50],    // arreglo de valores requeridos para el operador 'entre' (edades entre 35 y 50 años son pintadas)
-                    },
-                    style: {
-                        font: {
-                            b: true,                // Make the font bold
-                        },
-                        fill: {                     // Style the cell fill (background)
-                            pattern: {              // Type of fill (pattern or gradient)
-                                bgColor: 'e8f401',  // Fill color (be aware of the Excel gotcha that conditonal fills                                
-                            }
-                        }
-                    }
-                }
-                */
-
-                // 4 - Reemplazar o insertar celdas, columnas y filas
-
-                // 4.1 - Añadir columnas
-                /*
-                insertCells: [                  // Agregar una opción de configuración insertCells
-                    {
-                        cells: 'sCh',               // la "s" de Smart, "C" es la columna y "h" se refiere al header,
-                        content: 'Nueva columna C',    // nombre del encabezado de la columna que insertamos
-                        pushCol: true,              // pushCol hace que se inserte la columna
-                    },
-                    {
-                        cells: 'sC1:C-0',           // Target the data
-                        content: 'C',                // Add empty content
-                        pushCol: true               // empuja las columnas a la derecha para insertar el nuevo contenido
-                    }                    
-               ],
-                excelStyles: {
-                    template: 'cyan_medium',    // Add a template to the result
-                }
-                */
-
-                // 4.2 - Insertar filas
-                /*
-                insertCells: [                  // Agregar una opción de configuración insertCells                   
-                    {
-                        cells: 's5:6',              // Inserta los datos en las filas 5 y 6 contando desde el encabezado
-                        content: 'Celdas nuevas',   // contenido a insertar
-                        pushRow: true               // empuja las filas hacia abajo para insertar el contenido                    
-                    },
-                    {
-                        cells: 'B3',                // Celda B3
-                        content: 'Esta es la celda B3', // Simplemente sobreescribimos su contenido                                                    
-                    }
-               ],
-                excelStyles: {
-                    template: 'cyan_medium',    // Add a template to the result
-                }
-                */
-
-
-            // ejemplo para IMPRIMIR
-            /*
-            pageStyle: {
-                sheetPr: {
-                    pageSetUpPr: {
-                        fitToPage: 1            // Fit the printing to the page
-                    } 
-                },
-                printOptions: {
-                    horizontalCentered: true,
-                    verticalCentered: true,
-                },
-                pageSetup: {
-                    orientation: "landscape",   // Orientacion
-                    paperSize: "9",             // Tamaño del papel (1 = Legal, 9 = A4)
-                    fitToWidth: "1",            // Ajustar al ancho de la página
-                    fitToHeight: "0",           // Ajustar al alto de la página
-                },
-                pageMargins: {
-                    left: "0.2",
-                    right: "0.2",
-                    top: "0.4",
-                    bottom: "0.4",
-                    header: "0",
-                    footer: "0",
-                },
-                repeatHeading: true,    // Repeat the heading row at the top of each page
-                repeatCol: 'A:A',       // Repeat column A (for pages wider than a single printed page)
+           
             },
-            excelStyles: {
-                template: 'blue_gray_medium',    // Add a template style as well if you like
-            }
-            */    
-
-            },
-            ]            
-        }            
+          
+           
+            ],
+          },         
+      
     });
 });
 function autocomplete(inp, arr) {

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">    
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap5.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Reporte</title>
+    <title>Asignacion</title>
 
 </head>
 <body>
@@ -73,8 +73,8 @@
       padding: 1em 2em;
     }
     body {
-  background: #F1EDED;
-  background: linear-gradient(to right, #a6cdfc, #a6dbfe);
+  background: white;
+  
 }
     .modal__footer {
       text-align: right;
@@ -118,22 +118,20 @@
 
 /* 1 */
 .btn-1 {
-  background: #fdcae1;
-  background: linear-gradient(0deg, #fdcae1 0%,#fdcae1 100%);
+  background: #ff4081;
+  background: linear-gradient(0deg, #ff4081 0%,#ff4081 100%);
   border: none;
 }
 .btn-1:hover {
-   background: #f297c0;
-background: linear-gradient(0deg,#f297c0 0%, #f297c0 100%);
+   background: #f82685;
+background: linear-gradient(0deg,#ff4081 0%, #e7227b 100%);
 }
-    
- 
 /* Estilos para el HEAD de la tabla */
-table.dataTable thead {background-color:#fdcae1;color: azure;}
+table.dataTable thead {background-color:#ff4081;color: azure;}
 
 /* Estilos para los botones de paginacion */
 .page-item.active .page-link {
-  background-color:#fdcae1 !important;
+  background-color:#ff4081 !important;
     color: azure !important;
     /* border: 1px solid black; */
 }
@@ -142,9 +140,10 @@ table.dataTable thead {background-color:#fdcae1;color: azure;}
 }
     
     
+    
     </style>
 @extends('../Menu/Menu')
-@extends('../Menu/websocktet')
+
 
 <div class="espacio"></div>
     <div class="container shadow-lg p-3 mb-5 mt-5 bg-body rounded">

@@ -25,16 +25,24 @@ class CrudObras extends Controller
         }
         $herramienta = null;
         $condicion = DB::select('select * FROM user_herramientas WHERE user_herramientas.user =? and user_herramientas.obra  =?', [$request->id,$obra]);
+        $sup = DB::select('select * from users where users.id = ? ', [$request->id]);
+        foreach ($sup as $value)
+        {
+        
+          $rol = $value->rol;
+      
+        }
         foreach ($condicion as $key => $value) {
           if($value->herramienta > 0){
           $herramienta = $value->herramienta;
         }
       }
-      if($herramienta)
+    if($herramienta || $rol==1 )
       {
         $alerts = 3;
       }
        else {
+
         $delete = DB::delete('delete FROM user_herramientas WHERE user_herramientas.user =? and user_herramientas.obra  =?', [$request->id,$obra]);
         $alerts =4;
        }

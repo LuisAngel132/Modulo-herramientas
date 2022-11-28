@@ -57,7 +57,7 @@ class CrudHerramientas extends Controller
 
 }
   public function add_caja(Request $request){
-    $caja =  DB::update('update user_herramientas set cantidad = 1, descripcion = "caja" where user = ?', [$request->id]);
+    $caja =  DB::update('update user_herramientas set cantidad = 1, descripcion = "caja de herramientas" where user = ?', [$request->id]);
     $caja = 1;
     return redirect()-> route('vistavale', [$request->sup,$request->obra,$caja]);
 
@@ -110,8 +110,9 @@ class CrudHerramientas extends Controller
           if($herramientas->descripcion != NULL){
             
             $herramientas->descripcion = NULL;
+
           }
-      
+      $herramientas->observacion = $request->observacion;
         $herramientas->reporte = 1;
         $herramientas->update();
         $herramienta->estado = 1;

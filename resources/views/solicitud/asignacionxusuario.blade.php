@@ -31,7 +31,7 @@
     height: 4rem;
 }
 .borde{
-  background: #fdcae1;
+  background: #ff4081;
   color: #fff;
   font-weight: bold;
 }
@@ -88,8 +88,7 @@
    
     
      body {
-  background: #F1EDED;
-  background: linear-gradient(to right, #a6cdfc, #a6dbfe);
+  background: white;
 }
     
     button {
@@ -117,22 +116,22 @@
 
 /* 1 */
 .btn-1 {
-  background: #fdcae1;
-  background: linear-gradient(0deg, #fdcae1 0%,#fdcae1 100%);
+  background: #ff4081;
+  background: linear-gradient(0deg, #ff4081 0%,#ff4081 100%);
   border: none;
 }
 .btn-1:hover {
-   background: #f297c0;
-background: linear-gradient(0deg,#f297c0 0%, #f297c0 100%);
+   background: #f82685;
+background: linear-gradient(0deg,#ff4081 0%, #e7227b 100%);
 }
     
  
 /* Estilos para el HEAD de la tabla */
-table.dataTable thead {background-color:#fdcae1;color: azure;}
+table.dataTable thead {background-color:#ff4081;color: azure;}
 
 /* Estilos para los botones de paginacion */
 .page-item.active .page-link {
-  background-color:#fdcae1 !important;
+  background-color:#ff4081 !important;
     color: azure !important;
     /* border: 1px solid black; */
 }

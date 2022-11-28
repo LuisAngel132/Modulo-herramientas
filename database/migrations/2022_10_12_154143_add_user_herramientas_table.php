@@ -24,6 +24,7 @@ class AddUserHerramientasTable extends Migration
             $table->unsignedBigInteger('obra')->unsigned()->nullable();
             $table->foreign('obra')->references('id')->on('Obras')->onDelete('cascade');
             $table->text('descripcion')->nullable();
+            $table->text('observacion')->nullable();
             $table->integer('reporte')->nullable();
 
             $table->timestamps();

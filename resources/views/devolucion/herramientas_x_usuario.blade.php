@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
-    <title>Asignacion</title>
+    <title>Devolucion</title>
 
 </head>
 <body>
@@ -47,9 +47,8 @@
     }
     
     
-     body {
-  background: #F1EDED;
-  background: linear-gradient(to right, #a6cdfc, #a6dbfe);
+    body {
+  background: white;
 }
  
     
@@ -76,24 +75,23 @@
   outline: none;
 }
 
-/* 1 */
 .btn-1 {
-  background: #fdcae1;
-  background: linear-gradient(0deg, #fdcae1 0%,#fdcae1 100%);
+  background: #ff4081;
+  background: linear-gradient(0deg, #ff4081 0%,#ff4081 100%);
   border: none;
 }
 .btn-1:hover {
-   background: #f297c0;
-background: linear-gradient(0deg,#f297c0 0%, #f297c0 100%);
+   background: #f82685;
+background: linear-gradient(0deg,#ff4081 0%, #e7227b 100%);
 }
     
  
 /* Estilos para el HEAD de la tabla */
-table.dataTable thead {background-color:#fdcae1;color: azure;}
+table.dataTable thead {background-color:#ff4081;color: azure;}
 
 /* Estilos para los botones de paginacion */
 .page-item.active .page-link {
-  background-color:#fdcae1 !important;
+  background-color:#ff4081 !important;
     color: azure !important;
     /* border: 1px solid black; */
 }
@@ -161,7 +159,6 @@ table.dataTable thead {background-color:#fdcae1;color: azure;}
                               </svg>  
                             </button>
                           </a>
-                      
                           <script>
                           function followUser(e){
                               var idus= e.getAttribute('data-id_user');
@@ -171,6 +168,8 @@ table.dataTable thead {background-color:#fdcae1;color: azure;}
                               document.getElementById("contenido").innerHTML = `
                               <form action="{{ route('delete_herramientas_user') }}" method="POST">
                       @csrf
+                      <input type="text" class="form-control" placeholder="observaciones" name="observacion">
+<br>
                               <input id="id_user" name="id_user" type="hidden" value="${idus}">
                   <input id="id" name="id" type="hidden" value="${id}">
                   <input id="id_herramienta" name="id_herramienta" type="hidden" value="${id_herramienta}">
